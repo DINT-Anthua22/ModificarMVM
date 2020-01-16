@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Data.Entity;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ModificarMVVM
+{
+    class MainWindowMV : INotifyPropertyChanged
+    {
+        public event PropertyChangedEventHandler PropertyChanged;
+        private InformesEntities contexto;
+        public ObservableCollection<CLIENTE> CLIENTEs { get; set; }
+        
+
+        public MainWindowMV()
+        {
+            contexto = new InformesEntities();
+            contexto.CLIENTES.Load();
+            CLIENTEs = contexto.CLIENTES.Local;
+        
+        }
+
+        public void Actualizar()
+        {
+            contexto.SaveChanges();
+        }
+    }
+}
