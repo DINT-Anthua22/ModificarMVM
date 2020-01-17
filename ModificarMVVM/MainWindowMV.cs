@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ModificarMVVM
 {
@@ -27,6 +28,7 @@ namespace ModificarMVVM
         public void Actualizar()
         {
             contexto.SaveChanges();
+            MessageBox.Show("Info: " + "Usuario Actualizado", "Actualización", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }
