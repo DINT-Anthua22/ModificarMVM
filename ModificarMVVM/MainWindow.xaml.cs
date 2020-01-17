@@ -24,7 +24,7 @@ namespace ModificarMVVM
         {
             InitializeComponent();
             this.DataContext = new MainWindowMV();
-            UsuariosModificarCombox.DataContext = (this.DataContext as MainWindowMV).CLIENTEs;
+          
         }
 
         private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
